@@ -1,0 +1,99 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <Import Project="../../common.props" />
+
+  <PropertyGroup>
+    <TargetFrameworks>netstandard2.0;net5.0;net6.0;net7.0</TargetFrameworks>
+	<RootNamespace />
+	<PackageReleaseNotes></PackageReleaseNotes>
+  </PropertyGroup>
+
+  <ItemGroup Condition="'$(TargetFramework)'=='netstandard2.0'">
+    <PackageReference Include="System.Diagnostics.DiagnosticSource" Version="4.7.1" />
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(TargetFramework)'=='net5.0'">
+    <PackageReference Include="System.Diagnostics.DiagnosticSource" Version="5.0.0" />
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(TargetFramework)'=='net6.0'">
+    <PackageReference Include="System.Diagnostics.DiagnosticSource" Version="6.0.0" />
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(TargetFramework)'=='net7.0'">
+    <PackageReference Include="System.Diagnostics.DiagnosticSource" Version="7.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="System\ActionExtensions - Copy.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="System\GenericTaskFuncExtensions.cs">
+      <DependentUpon>GenericTaskFuncExtensions.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </None>
+    <None Include="System\TaskFuncExtensions.cs">
+      <DependentUpon>TaskFuncExtensions.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </None>
+    <None Include="System\FuncExtensions.cs">
+      <DependentUpon>FuncExtensions.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </None>
+    <None Include="System\ActionExtensions.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>ActionExtensions.tt</DependentUpon>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="System\GenericTaskFuncExtensions.tt">
+      <LastGenOutput>GenericTaskFuncExtensions.cs</LastGenOutput>
+      <Generator>TextTemplatingFileGenerator</Generator>
+    </None>
+    <None Update="System\TaskFuncExtensions.tt">
+      <LastGenOutput>TaskFuncExtensions.cs</LastGenOutput>
+      <Generator>TextTemplatingFileGenerator</Generator>
+    </None>
+    <None Update="System\FuncExtensions.tt">
+      <LastGenOutput>FuncExtensions.cs</LastGenOutput>
+      <Generator>TextTemplatingFileGenerator</Generator>
+    </None>
+    <None Update="System\ActionExtensions.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ActionExtensions.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Service Include="{508349b6-6b84-4df5-91f0-309beebad82d}" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="System\ActionExtensions.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>ActionExtensions.tt</DependentUpon>
+    </Compile>
+    <Compile Update="System\FuncExtensions.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>FuncExtensions.tt</DependentUpon>
+    </Compile>
+    <Compile Update="System\GenericTaskFuncExtensions.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>GenericTaskFuncExtensions.tt</DependentUpon>
+    </Compile>
+    <Compile Update="System\TaskFuncExtensions.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>TaskFuncExtensions.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+</Project>

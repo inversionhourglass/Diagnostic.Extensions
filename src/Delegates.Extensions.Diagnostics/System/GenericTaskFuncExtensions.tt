@@ -1,0 +1,85 @@
+﻿<#@ template debug="false" hostspecific="false" language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ output extension=".cs" #>
+using Delegates.Extensions.Diagnostics.Contexts;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+
+using static Delegates.Extensions.Diagnostics.Diagnostician;
+
+namespace System
+{
+    /// <summary>
+    /// Func&lt;, Task&lt;TResult&gt;&gt; extensions
+    /// </summary>
+    public static class GenericTaskFuncExtensions
+    {
+    <#
+    for (var i = 0; i < 17; i++)
+    {
+        var genericTypes = string.Empty;
+        var args = string.Empty;
+        if (i == 1)
+        {
+            genericTypes = "T, ";
+            args = "arg";
+        }
+        else if (i > 1)
+        {
+            var genericTypesBuilder = new StringBuilder();
+            var argsBuilder = new StringBuilder();
+
+            for (var j = 1; j < i + 1; j++)
+            {
+                genericTypesBuilder.Append('T').Append(j).Append(", ");
+                argsBuilder.Append("arg").Append(j).Append(", ");
+            }
+            argsBuilder.Length = argsBuilder.Length - 2;
+
+            genericTypes = genericTypesBuilder.ToString();
+            args = argsBuilder.ToString();
+        }
+    #>
+
+        /// <summary/>
+        public static Func<<#=genericTypes#>Task<TResult>> Diagnostic<<#=genericTypes#>TResult>(this Func<<#=genericTypes#>Task<TResult>> func, string? category = null, object? data = null)
+        {
+            var cabinet = new Dictionary<string, object>();
+
+            var preparingContext = new PreparingContext(data, cabinet);
+            Write(category, Ids.PREPARING, preparingContext);
+            Func<<#=genericTypes#>Task<TResult>> wrapped = async (<#=args#>) =>
+            {
+                var executingContext = new ExecutingContext(data, cabinet);
+                Write(category, Ids.EXECUTING, executingContext);
+                try
+                {
+                    var result = await func(<#=args#>);
+                    var succeedContext = new SucceedContext(data, cabinet);
+                    Write(category, Ids.SUCCEED, data);
+                    return result;
+                }
+                catch (Exception ex)
+                {
+                    var exceptionalContext = new ExceptionalContext(ex, data, cabinet);
+                    Write(category, Ids.EXCEPTIONAL, data);
+                    throw;
+                }
+                finally
+                {
+                    var finishedContext = new FinishedContext(data, cabinet);
+                    Write(category, Ids.FINISHED, data);
+                }
+            };
+            var preparedContext = new PreparedContext(data, cabinet);
+            Write(category, Ids.PREPARED, data);
+
+            return wrapped;
+        }
+    <#}#>
+
+    }
+}
