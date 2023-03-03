@@ -4,7 +4,8 @@
   <PropertyGroup>
     <TargetFrameworks>netstandard2.0;net5.0;net6.0;net7.0</TargetFrameworks>
 	<RootNamespace />
-	<PackageReleaseNotes></PackageReleaseNotes>
+    <Description>Wraps delegate and generate diagnostic message during the different lifecycles of the delegate.</Description>
+	<PackageReleaseNotes>Support Action, Func&lt;&gt;, Func&lt;, Task&gt;, Func&lt;, Task&lt;TResult&gt;&gt;, ParameterizedThreadStart, ThreadStart, TimerCallback and WaitCallback.</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup Condition="'$(TargetFramework)'=='netstandard2.0'">
@@ -24,10 +25,31 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Remove="System\ActionExtensions - Copy.cs" />
-  </ItemGroup>
-
-  <ItemGroup>
+    <None Include="System\ActionExtensions.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>ActionExtensions.tt</DependentUpon>
+    </None>
+    <None Include="System\DiagnosticAction.cs">
+      <DependentUpon>DiagnosticAction.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </None>
+    <None Include="System\DiagnosticFunc.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>DiagnosticFunc.tt</DependentUpon>
+    </None>
+    <None Include="System\DiagnosticGenericTaskFunc.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>DiagnosticGenericTaskFunc.tt</DependentUpon>
+    </None>
+    <None Include="System\DiagnosticTaskFunc.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>DiagnosticTaskFunc.tt</DependentUpon>
+    </None>
     <None Include="System\GenericTaskFuncExtensions.cs">
       <DependentUpon>GenericTaskFuncExtensions.tt</DependentUpon>
       <DesignTime>True</DesignTime>
@@ -43,14 +65,29 @@
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
     </None>
-    <None Include="System\ActionExtensions.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>ActionExtensions.tt</DependentUpon>
-    </None>
   </ItemGroup>
 
   <ItemGroup>
+    <None Update="System\ActionExtensions.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ActionExtensions.cs</LastGenOutput>
+    </None>
+    <None Update="System\DiagnosticAction.tt">
+      <LastGenOutput>DiagnosticAction.cs</LastGenOutput>
+      <Generator>TextTemplatingFileGenerator</Generator>
+    </None>
+    <None Update="System\DiagnosticFunc.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>DiagnosticFunc.cs</LastGenOutput>
+    </None>
+    <None Update="System\DiagnosticGenericTaskFunc.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>DiagnosticGenericTaskFunc.cs</LastGenOutput>
+    </None>
+    <None Update="System\DiagnosticTaskFunc.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>DiagnosticTaskFunc.cs</LastGenOutput>
+    </None>
     <None Update="System\GenericTaskFuncExtensions.tt">
       <LastGenOutput>GenericTaskFuncExtensions.cs</LastGenOutput>
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -63,10 +100,6 @@
       <LastGenOutput>FuncExtensions.cs</LastGenOutput>
       <Generator>TextTemplatingFileGenerator</Generator>
     </None>
-    <None Update="System\ActionExtensions.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>ActionExtensions.cs</LastGenOutput>
-    </None>
   </ItemGroup>
 
   <ItemGroup>
@@ -78,6 +111,26 @@
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>ActionExtensions.tt</DependentUpon>
+    </Compile>
+    <Compile Update="System\DiagnosticAction.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>DiagnosticAction.tt</DependentUpon>
+    </Compile>
+    <Compile Update="System\DiagnosticFunc.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>DiagnosticFunc.tt</DependentUpon>
+    </Compile>
+    <Compile Update="System\DiagnosticGenericTaskFunc.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>DiagnosticGenericTaskFunc.tt</DependentUpon>
+    </Compile>
+    <Compile Update="System\DiagnosticTaskFunc.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>DiagnosticTaskFunc.tt</DependentUpon>
     </Compile>
     <Compile Update="System\FuncExtensions.cs">
       <DesignTime>True</DesignTime>

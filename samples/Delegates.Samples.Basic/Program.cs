@@ -26,7 +26,7 @@ namespace Delegates.Samples.Basic
 
             for (int i = 0; i < 15; i++)
             {
-                tasks.Add(Task.Run(((Action)Delay).Diagnostic("Timing")));
+                tasks.Add(Task.Run(new DiagnosticAction("Timing", Delay)));
             }
 
             Task.WaitAll(tasks.ToArray());

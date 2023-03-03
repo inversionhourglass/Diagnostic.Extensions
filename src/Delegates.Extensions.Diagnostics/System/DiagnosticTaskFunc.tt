@@ -1,0 +1,65 @@
+﻿<#@ template debug="false" hostspecific="false" language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ output extension=".cs" #>
+using System.Threading.Tasks;
+
+namespace System
+{
+    <#
+    for (var i = 0; i < 17; i++)
+    {
+        var genericTypes = string.Empty;
+        var genericTypesDefinition = string.Empty;
+        if (i == 1)
+        {
+            genericTypes = "T, ";
+            genericTypesDefinition = "<T>";
+        }
+        else if (i > 1)
+        {
+            var genericTypesBuilder = new StringBuilder();
+
+            for (var j = 1; j < i + 1; j++)
+            {
+                genericTypesBuilder.Append('T').Append(j).Append(", ");
+            }
+
+            genericTypes = genericTypesBuilder.ToString();
+            genericTypesBuilder.Length = genericTypesBuilder.Length - 2;
+            genericTypesDefinition = $"<{genericTypesBuilder}>";
+        }
+    #>
+
+    /// <summary>
+    /// Func diagnostic message
+    /// </summary>
+    public struct DiagnosticTaskFunc<#=genericTypesDefinition#>
+    {
+        private readonly Func<<#=genericTypes#>Task> _func;
+
+        /// <summary/>
+        public DiagnosticTaskFunc(Func<<#=genericTypes#>Task> func) : this(null, null, func) { }
+
+        /// <summary/>
+        public DiagnosticTaskFunc(string? category, Func<<#=genericTypes#>Task> func) : this(category, null, func) { }
+
+        /// <summary/>
+        public DiagnosticTaskFunc(string? category, object? data, Func<<#=genericTypes#>Task> func)
+        {
+            _func = func.Diagnostic(category, data);
+        }
+
+        /// <summary>
+        /// Implicit convert DiagnosticTaskFunc to Func
+        /// </summary>
+        public static implicit operator Func<<#=genericTypes#>Task>(DiagnosticTaskFunc<#=genericTypesDefinition#> func)
+        {
+            return func._func;
+        }
+    }
+    <#}#>
+
+}

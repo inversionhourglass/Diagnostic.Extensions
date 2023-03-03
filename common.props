@@ -1,8 +1,7 @@
 <Project>
   <PropertyGroup>
-    <Version>0.1.0-alpha</Version>
+    <Version>0.1.0-beta</Version>
     <Authors>ihourglass</Authors>
-    <Description>Wraps delegate and generate diagnostic message during the different lifecycles of the delegate.</Description>
     <PackageTags>Diagnostics</PackageTags>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
