@@ -33,6 +33,8 @@ public static Action Diagnostic(this Action action, string? category = null, obj
 What you can do.
 ```csharp
 Task.Run(((Action)Call).Diagnostic("Timing"));
+// or
+Task.Run(new DiagnosticAction("Timing", Call));
 
 
 void Call() { }
