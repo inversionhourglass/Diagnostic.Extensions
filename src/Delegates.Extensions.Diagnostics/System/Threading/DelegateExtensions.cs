@@ -28,5 +28,37 @@ namespace System.Threading
         {
             return ((Func<Task<TResult>>)func)().GetAwaiter();
         }
+
+        /// <summary>
+        /// Get inner task's awaiter
+        /// </summary>
+        public static TaskAwaiter GetAwaiter(this DiagnosticFunc<Task> func)
+        {
+            return func.Invoke().GetAwaiter();
+        }
+
+        /// <summary>
+        /// Get inner task's awaiter
+        /// </summary>
+        public static TaskAwaiter<TResult> GetAwaiter<TResult>(this DiagnosticFunc<Task<TResult>> func)
+        {
+            return func.Invoke().GetAwaiter();
+        }
+
+        /// <summary>
+        /// Get inner task's awaiter
+        /// </summary>
+        public static ValueTaskAwaiter GetAwaiter(this DiagnosticFunc<ValueTask> func)
+        {
+            return func.Invoke().GetAwaiter();
+        }
+
+        /// <summary>
+        /// Get inner task's awaiter
+        /// </summary>
+        public static ValueTaskAwaiter<TResult> GetAwaiter<TResult>(this DiagnosticFunc<ValueTask<TResult>> func)
+        {
+            return func.Invoke().GetAwaiter();
+        }
     }
 }
