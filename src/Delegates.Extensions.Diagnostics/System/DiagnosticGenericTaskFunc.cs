@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+﻿using System.ComponentModel;
+using System.Threading.Tasks;
 
 namespace System
 {
@@ -6,6 +7,8 @@ namespace System
     /// <summary>
     /// Func diagnostic message
     /// </summary>
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    [Obsolete("Infact we don't need DiagnosticGenericTaskFunc, DiagnosticFunc is enough")]
     public struct DiagnosticGenericTaskFunc<TResult>
     {
         private readonly Func<Task<TResult>> _func;
@@ -37,6 +40,8 @@ namespace System
     /// <summary>
     /// Func diagnostic message
     /// </summary>
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    [Obsolete("Infact we don't need DiagnosticGenericTaskFunc, DiagnosticFunc is enough")]
     public struct DiagnosticGenericTaskFunc<T, TResult>
     {
         private readonly Func<T, Task<TResult>> _func;
@@ -68,6 +73,8 @@ namespace System
     /// <summary>
     /// Func diagnostic message
     /// </summary>
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    [Obsolete("Infact we don't need DiagnosticGenericTaskFunc, DiagnosticFunc is enough")]
     public struct DiagnosticGenericTaskFunc<T1, T2, TResult>
     {
         private readonly Func<T1, T2, Task<TResult>> _func;
@@ -99,6 +106,8 @@ namespace System
     /// <summary>
     /// Func diagnostic message
     /// </summary>
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    [Obsolete("Infact we don't need DiagnosticGenericTaskFunc, DiagnosticFunc is enough")]
     public struct DiagnosticGenericTaskFunc<T1, T2, T3, TResult>
     {
         private readonly Func<T1, T2, T3, Task<TResult>> _func;
@@ -130,6 +139,8 @@ namespace System
     /// <summary>
     /// Func diagnostic message
     /// </summary>
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    [Obsolete("Infact we don't need DiagnosticGenericTaskFunc, DiagnosticFunc is enough")]
     public struct DiagnosticGenericTaskFunc<T1, T2, T3, T4, TResult>
     {
         private readonly Func<T1, T2, T3, T4, Task<TResult>> _func;
@@ -161,6 +172,8 @@ namespace System
     /// <summary>
     /// Func diagnostic message
     /// </summary>
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    [Obsolete("Infact we don't need DiagnosticGenericTaskFunc, DiagnosticFunc is enough")]
     public struct DiagnosticGenericTaskFunc<T1, T2, T3, T4, T5, TResult>
     {
         private readonly Func<T1, T2, T3, T4, T5, Task<TResult>> _func;
@@ -192,6 +205,8 @@ namespace System
     /// <summary>
     /// Func diagnostic message
     /// </summary>
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    [Obsolete("Infact we don't need DiagnosticGenericTaskFunc, DiagnosticFunc is enough")]
     public struct DiagnosticGenericTaskFunc<T1, T2, T3, T4, T5, T6, TResult>
     {
         private readonly Func<T1, T2, T3, T4, T5, T6, Task<TResult>> _func;
@@ -223,6 +238,8 @@ namespace System
     /// <summary>
     /// Func diagnostic message
     /// </summary>
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    [Obsolete("Infact we don't need DiagnosticGenericTaskFunc, DiagnosticFunc is enough")]
     public struct DiagnosticGenericTaskFunc<T1, T2, T3, T4, T5, T6, T7, TResult>
     {
         private readonly Func<T1, T2, T3, T4, T5, T6, T7, Task<TResult>> _func;
@@ -254,6 +271,8 @@ namespace System
     /// <summary>
     /// Func diagnostic message
     /// </summary>
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    [Obsolete("Infact we don't need DiagnosticGenericTaskFunc, DiagnosticFunc is enough")]
     public struct DiagnosticGenericTaskFunc<T1, T2, T3, T4, T5, T6, T7, T8, TResult>
     {
         private readonly Func<T1, T2, T3, T4, T5, T6, T7, T8, Task<TResult>> _func;
@@ -285,6 +304,8 @@ namespace System
     /// <summary>
     /// Func diagnostic message
     /// </summary>
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    [Obsolete("Infact we don't need DiagnosticGenericTaskFunc, DiagnosticFunc is enough")]
     public struct DiagnosticGenericTaskFunc<T1, T2, T3, T4, T5, T6, T7, T8, T9, TResult>
     {
         private readonly Func<T1, T2, T3, T4, T5, T6, T7, T8, T9, Task<TResult>> _func;
@@ -316,6 +337,8 @@ namespace System
     /// <summary>
     /// Func diagnostic message
     /// </summary>
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    [Obsolete("Infact we don't need DiagnosticGenericTaskFunc, DiagnosticFunc is enough")]
     public struct DiagnosticGenericTaskFunc<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, TResult>
     {
         private readonly Func<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, Task<TResult>> _func;
@@ -347,6 +370,8 @@ namespace System
     /// <summary>
     /// Func diagnostic message
     /// </summary>
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    [Obsolete("Infact we don't need DiagnosticGenericTaskFunc, DiagnosticFunc is enough")]
     public struct DiagnosticGenericTaskFunc<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, TResult>
     {
         private readonly Func<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, Task<TResult>> _func;
@@ -378,6 +403,8 @@ namespace System
     /// <summary>
     /// Func diagnostic message
     /// </summary>
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    [Obsolete("Infact we don't need DiagnosticGenericTaskFunc, DiagnosticFunc is enough")]
     public struct DiagnosticGenericTaskFunc<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, TResult>
     {
         private readonly Func<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, Task<TResult>> _func;
@@ -409,6 +436,8 @@ namespace System
     /// <summary>
     /// Func diagnostic message
     /// </summary>
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    [Obsolete("Infact we don't need DiagnosticGenericTaskFunc, DiagnosticFunc is enough")]
     public struct DiagnosticGenericTaskFunc<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, TResult>
     {
         private readonly Func<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, Task<TResult>> _func;
@@ -440,6 +469,8 @@ namespace System
     /// <summary>
     /// Func diagnostic message
     /// </summary>
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    [Obsolete("Infact we don't need DiagnosticGenericTaskFunc, DiagnosticFunc is enough")]
     public struct DiagnosticGenericTaskFunc<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, TResult>
     {
         private readonly Func<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, Task<TResult>> _func;
@@ -471,6 +502,8 @@ namespace System
     /// <summary>
     /// Func diagnostic message
     /// </summary>
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    [Obsolete("Infact we don't need DiagnosticGenericTaskFunc, DiagnosticFunc is enough")]
     public struct DiagnosticGenericTaskFunc<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, TResult>
     {
         private readonly Func<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, Task<TResult>> _func;
@@ -502,6 +535,8 @@ namespace System
     /// <summary>
     /// Func diagnostic message
     /// </summary>
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    [Obsolete("Infact we don't need DiagnosticGenericTaskFunc, DiagnosticFunc is enough")]
     public struct DiagnosticGenericTaskFunc<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, TResult>
     {
         private readonly Func<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, Task<TResult>> _func;

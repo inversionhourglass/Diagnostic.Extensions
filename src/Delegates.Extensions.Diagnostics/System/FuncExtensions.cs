@@ -8,12 +8,15 @@ namespace System
     /// <summary>
     /// Func&lt;, TResult&gt; extensions
     /// </summary>
-    public static class FuncExtensions
+    public static partial class FuncExtensions
     {
     
         /// <summary/>
         public static Func<TResult> Diagnostic<TResult>(this Func<TResult> func, string? category = null, object? data = null)
         {
+            var taskFunc = TryTaskDiagnostic(func, category, data);
+            if (taskFunc != null) return taskFunc;
+
             var cabinet = new Dictionary<string, object>();
 
             var preparingContext = new PreparingContext(data, cabinet);
@@ -50,6 +53,9 @@ namespace System
         /// <summary/>
         public static Func<T, TResult> Diagnostic<T, TResult>(this Func<T, TResult> func, string? category = null, object? data = null)
         {
+            var taskFunc = TryTaskDiagnostic(func, category, data);
+            if (taskFunc != null) return taskFunc;
+
             var cabinet = new Dictionary<string, object>();
 
             var preparingContext = new PreparingContext(data, cabinet);
@@ -86,6 +92,9 @@ namespace System
         /// <summary/>
         public static Func<T1, T2, TResult> Diagnostic<T1, T2, TResult>(this Func<T1, T2, TResult> func, string? category = null, object? data = null)
         {
+            var taskFunc = TryTaskDiagnostic(func, category, data);
+            if (taskFunc != null) return taskFunc;
+
             var cabinet = new Dictionary<string, object>();
 
             var preparingContext = new PreparingContext(data, cabinet);
@@ -122,6 +131,9 @@ namespace System
         /// <summary/>
         public static Func<T1, T2, T3, TResult> Diagnostic<T1, T2, T3, TResult>(this Func<T1, T2, T3, TResult> func, string? category = null, object? data = null)
         {
+            var taskFunc = TryTaskDiagnostic(func, category, data);
+            if (taskFunc != null) return taskFunc;
+
             var cabinet = new Dictionary<string, object>();
 
             var preparingContext = new PreparingContext(data, cabinet);
@@ -158,6 +170,9 @@ namespace System
         /// <summary/>
         public static Func<T1, T2, T3, T4, TResult> Diagnostic<T1, T2, T3, T4, TResult>(this Func<T1, T2, T3, T4, TResult> func, string? category = null, object? data = null)
         {
+            var taskFunc = TryTaskDiagnostic(func, category, data);
+            if (taskFunc != null) return taskFunc;
+
             var cabinet = new Dictionary<string, object>();
 
             var preparingContext = new PreparingContext(data, cabinet);
@@ -194,6 +209,9 @@ namespace System
         /// <summary/>
         public static Func<T1, T2, T3, T4, T5, TResult> Diagnostic<T1, T2, T3, T4, T5, TResult>(this Func<T1, T2, T3, T4, T5, TResult> func, string? category = null, object? data = null)
         {
+            var taskFunc = TryTaskDiagnostic(func, category, data);
+            if (taskFunc != null) return taskFunc;
+
             var cabinet = new Dictionary<string, object>();
 
             var preparingContext = new PreparingContext(data, cabinet);
@@ -230,6 +248,9 @@ namespace System
         /// <summary/>
         public static Func<T1, T2, T3, T4, T5, T6, TResult> Diagnostic<T1, T2, T3, T4, T5, T6, TResult>(this Func<T1, T2, T3, T4, T5, T6, TResult> func, string? category = null, object? data = null)
         {
+            var taskFunc = TryTaskDiagnostic(func, category, data);
+            if (taskFunc != null) return taskFunc;
+
             var cabinet = new Dictionary<string, object>();
 
             var preparingContext = new PreparingContext(data, cabinet);
@@ -266,6 +287,9 @@ namespace System
         /// <summary/>
         public static Func<T1, T2, T3, T4, T5, T6, T7, TResult> Diagnostic<T1, T2, T3, T4, T5, T6, T7, TResult>(this Func<T1, T2, T3, T4, T5, T6, T7, TResult> func, string? category = null, object? data = null)
         {
+            var taskFunc = TryTaskDiagnostic(func, category, data);
+            if (taskFunc != null) return taskFunc;
+
             var cabinet = new Dictionary<string, object>();
 
             var preparingContext = new PreparingContext(data, cabinet);
@@ -302,6 +326,9 @@ namespace System
         /// <summary/>
         public static Func<T1, T2, T3, T4, T5, T6, T7, T8, TResult> Diagnostic<T1, T2, T3, T4, T5, T6, T7, T8, TResult>(this Func<T1, T2, T3, T4, T5, T6, T7, T8, TResult> func, string? category = null, object? data = null)
         {
+            var taskFunc = TryTaskDiagnostic(func, category, data);
+            if (taskFunc != null) return taskFunc;
+
             var cabinet = new Dictionary<string, object>();
 
             var preparingContext = new PreparingContext(data, cabinet);
@@ -338,6 +365,9 @@ namespace System
         /// <summary/>
         public static Func<T1, T2, T3, T4, T5, T6, T7, T8, T9, TResult> Diagnostic<T1, T2, T3, T4, T5, T6, T7, T8, T9, TResult>(this Func<T1, T2, T3, T4, T5, T6, T7, T8, T9, TResult> func, string? category = null, object? data = null)
         {
+            var taskFunc = TryTaskDiagnostic(func, category, data);
+            if (taskFunc != null) return taskFunc;
+
             var cabinet = new Dictionary<string, object>();
 
             var preparingContext = new PreparingContext(data, cabinet);
@@ -374,6 +404,9 @@ namespace System
         /// <summary/>
         public static Func<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, TResult> Diagnostic<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, TResult>(this Func<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, TResult> func, string? category = null, object? data = null)
         {
+            var taskFunc = TryTaskDiagnostic(func, category, data);
+            if (taskFunc != null) return taskFunc;
+
             var cabinet = new Dictionary<string, object>();
 
             var preparingContext = new PreparingContext(data, cabinet);
@@ -410,6 +443,9 @@ namespace System
         /// <summary/>
         public static Func<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, TResult> Diagnostic<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, TResult>(this Func<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, TResult> func, string? category = null, object? data = null)
         {
+            var taskFunc = TryTaskDiagnostic(func, category, data);
+            if (taskFunc != null) return taskFunc;
+
             var cabinet = new Dictionary<string, object>();
 
             var preparingContext = new PreparingContext(data, cabinet);
@@ -446,6 +482,9 @@ namespace System
         /// <summary/>
         public static Func<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, TResult> Diagnostic<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, TResult>(this Func<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, TResult> func, string? category = null, object? data = null)
         {
+            var taskFunc = TryTaskDiagnostic(func, category, data);
+            if (taskFunc != null) return taskFunc;
+
             var cabinet = new Dictionary<string, object>();
 
             var preparingContext = new PreparingContext(data, cabinet);
@@ -482,6 +521,9 @@ namespace System
         /// <summary/>
         public static Func<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, TResult> Diagnostic<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, TResult>(this Func<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, TResult> func, string? category = null, object? data = null)
         {
+            var taskFunc = TryTaskDiagnostic(func, category, data);
+            if (taskFunc != null) return taskFunc;
+
             var cabinet = new Dictionary<string, object>();
 
             var preparingContext = new PreparingContext(data, cabinet);
@@ -518,6 +560,9 @@ namespace System
         /// <summary/>
         public static Func<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, TResult> Diagnostic<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, TResult>(this Func<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, TResult> func, string? category = null, object? data = null)
         {
+            var taskFunc = TryTaskDiagnostic(func, category, data);
+            if (taskFunc != null) return taskFunc;
+
             var cabinet = new Dictionary<string, object>();
 
             var preparingContext = new PreparingContext(data, cabinet);
@@ -554,6 +599,9 @@ namespace System
         /// <summary/>
         public static Func<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, TResult> Diagnostic<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, TResult>(this Func<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, TResult> func, string? category = null, object? data = null)
         {
+            var taskFunc = TryTaskDiagnostic(func, category, data);
+            if (taskFunc != null) return taskFunc;
+
             var cabinet = new Dictionary<string, object>();
 
             var preparingContext = new PreparingContext(data, cabinet);
@@ -590,6 +638,9 @@ namespace System
         /// <summary/>
         public static Func<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, TResult> Diagnostic<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, TResult>(this Func<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, TResult> func, string? category = null, object? data = null)
         {
+            var taskFunc = TryTaskDiagnostic(func, category, data);
+            if (taskFunc != null) return taskFunc;
+
             var cabinet = new Dictionary<string, object>();
 
             var preparingContext = new PreparingContext(data, cabinet);

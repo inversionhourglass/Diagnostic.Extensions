@@ -18,6 +18,7 @@ namespace System
     public static class GenericTaskFuncExtensions
     {
     <#
+    var taskPrefixes = new[] { string.Empty, "Value" };
     for (var i = 0; i < 17; i++)
     {
         var genericTypes = string.Empty;
@@ -42,16 +43,18 @@ namespace System
             genericTypes = genericTypesBuilder.ToString();
             args = argsBuilder.ToString();
         }
+        foreach (var prefix in taskPrefixes)
+        {
     #>
 
         /// <summary/>
-        public static Func<<#=genericTypes#>Task<TResult>> Diagnostic<<#=genericTypes#>TResult>(this Func<<#=genericTypes#>Task<TResult>> func, string? category = null, object? data = null)
+        public static Func<<#=genericTypes#><#=prefix#>Task<TResult>> Diagnostic<<#=genericTypes#>TResult>(this Func<<#=genericTypes#><#=prefix#>Task<TResult>> func, string? category = null, object? data = null)
         {
             var cabinet = new Dictionary<string, object>();
 
             var preparingContext = new PreparingContext(data, cabinet);
             Write(category, Ids.PREPARING, preparingContext);
-            Func<<#=genericTypes#>Task<TResult>> wrapped = async (<#=args#>) =>
+            Func<<#=genericTypes#><#=prefix#>Task<TResult>> wrapped = async (<#=args#>) =>
             {
                 var executingContext = new ExecutingContext(data, cabinet);
                 Write(category, Ids.EXECUTING, executingContext);
@@ -79,7 +82,10 @@ namespace System
 
             return wrapped;
         }
-    <#}#>
+    <#
+        }
+    }
+    #>
 
     }
 }

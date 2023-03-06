@@ -4,6 +4,7 @@
 <#@ import namespace="System.Text" #>
 <#@ import namespace="System.Collections.Generic" #>
 <#@ output extension=".cs" #>
+using System.ComponentModel;
 using System.Threading.Tasks;
 
 namespace System
@@ -44,6 +45,8 @@ namespace System
     /// <summary>
     /// Func diagnostic message
     /// </summary>
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    [Obsolete("Infact we don't need DiagnosticGenericTaskFunc, DiagnosticFunc is enough")]
     public struct DiagnosticGenericTaskFunc<<#=genericTypes#>TResult>
     {
         private readonly Func<<#=genericTypes#>Task<TResult>> _func;

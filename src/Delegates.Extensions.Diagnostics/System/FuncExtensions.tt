@@ -14,7 +14,7 @@ namespace System
     /// <summary>
     /// Func&lt;, TResult&gt; extensions
     /// </summary>
-    public static class FuncExtensions
+    public static partial class FuncExtensions
     {
     <#
     for (var i = 0; i < 17; i++)
@@ -46,6 +46,9 @@ namespace System
         /// <summary/>
         public static Func<<#=genericTypes#>TResult> Diagnostic<<#=genericTypes#>TResult>(this Func<<#=genericTypes#>TResult> func, string? category = null, object? data = null)
         {
+            var taskFunc = TryTaskDiagnostic(func, category, data);
+            if (taskFunc != null) return taskFunc;
+
             var cabinet = new Dictionary<string, object>();
 
             var preparingContext = new PreparingContext(data, cabinet);
