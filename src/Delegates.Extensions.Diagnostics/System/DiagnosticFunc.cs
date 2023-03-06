@@ -20,6 +20,9 @@
             _func = func.Diagnostic(category, data);
         }
 
+        /// <summary/>
+        public TResult Invoke() => _func();
+
         /// <summary>
         /// Implicit convert DiagnosticFunc to Func
         /// </summary>
@@ -47,6 +50,9 @@
         {
             _func = func.Diagnostic(category, data);
         }
+
+        /// <summary/>
+        public TResult Invoke(T arg) => _func(arg);
 
         /// <summary>
         /// Implicit convert DiagnosticFunc to Func
@@ -76,6 +82,9 @@
             _func = func.Diagnostic(category, data);
         }
 
+        /// <summary/>
+        public TResult Invoke(T1 arg1, T2 arg2) => _func(arg1, arg2);
+
         /// <summary>
         /// Implicit convert DiagnosticFunc to Func
         /// </summary>
@@ -103,6 +112,9 @@
         {
             _func = func.Diagnostic(category, data);
         }
+
+        /// <summary/>
+        public TResult Invoke(T1 arg1, T2 arg2, T3 arg3) => _func(arg1, arg2, arg3);
 
         /// <summary>
         /// Implicit convert DiagnosticFunc to Func
@@ -132,6 +144,9 @@
             _func = func.Diagnostic(category, data);
         }
 
+        /// <summary/>
+        public TResult Invoke(T1 arg1, T2 arg2, T3 arg3, T4 arg4) => _func(arg1, arg2, arg3, arg4);
+
         /// <summary>
         /// Implicit convert DiagnosticFunc to Func
         /// </summary>
@@ -159,6 +174,9 @@
         {
             _func = func.Diagnostic(category, data);
         }
+
+        /// <summary/>
+        public TResult Invoke(T1 arg1, T2 arg2, T3 arg3, T4 arg4, T5 arg5) => _func(arg1, arg2, arg3, arg4, arg5);
 
         /// <summary>
         /// Implicit convert DiagnosticFunc to Func
@@ -188,6 +206,9 @@
             _func = func.Diagnostic(category, data);
         }
 
+        /// <summary/>
+        public TResult Invoke(T1 arg1, T2 arg2, T3 arg3, T4 arg4, T5 arg5, T6 arg6) => _func(arg1, arg2, arg3, arg4, arg5, arg6);
+
         /// <summary>
         /// Implicit convert DiagnosticFunc to Func
         /// </summary>
@@ -215,6 +236,9 @@
         {
             _func = func.Diagnostic(category, data);
         }
+
+        /// <summary/>
+        public TResult Invoke(T1 arg1, T2 arg2, T3 arg3, T4 arg4, T5 arg5, T6 arg6, T7 arg7) => _func(arg1, arg2, arg3, arg4, arg5, arg6, arg7);
 
         /// <summary>
         /// Implicit convert DiagnosticFunc to Func
@@ -244,6 +268,9 @@
             _func = func.Diagnostic(category, data);
         }
 
+        /// <summary/>
+        public TResult Invoke(T1 arg1, T2 arg2, T3 arg3, T4 arg4, T5 arg5, T6 arg6, T7 arg7, T8 arg8) => _func(arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
+
         /// <summary>
         /// Implicit convert DiagnosticFunc to Func
         /// </summary>
@@ -271,6 +298,9 @@
         {
             _func = func.Diagnostic(category, data);
         }
+
+        /// <summary/>
+        public TResult Invoke(T1 arg1, T2 arg2, T3 arg3, T4 arg4, T5 arg5, T6 arg6, T7 arg7, T8 arg8, T9 arg9) => _func(arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9);
 
         /// <summary>
         /// Implicit convert DiagnosticFunc to Func
@@ -300,6 +330,9 @@
             _func = func.Diagnostic(category, data);
         }
 
+        /// <summary/>
+        public TResult Invoke(T1 arg1, T2 arg2, T3 arg3, T4 arg4, T5 arg5, T6 arg6, T7 arg7, T8 arg8, T9 arg9, T10 arg10) => _func(arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10);
+
         /// <summary>
         /// Implicit convert DiagnosticFunc to Func
         /// </summary>
@@ -327,6 +360,9 @@
         {
             _func = func.Diagnostic(category, data);
         }
+
+        /// <summary/>
+        public TResult Invoke(T1 arg1, T2 arg2, T3 arg3, T4 arg4, T5 arg5, T6 arg6, T7 arg7, T8 arg8, T9 arg9, T10 arg10, T11 arg11) => _func(arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11);
 
         /// <summary>
         /// Implicit convert DiagnosticFunc to Func
@@ -356,6 +392,9 @@
             _func = func.Diagnostic(category, data);
         }
 
+        /// <summary/>
+        public TResult Invoke(T1 arg1, T2 arg2, T3 arg3, T4 arg4, T5 arg5, T6 arg6, T7 arg7, T8 arg8, T9 arg9, T10 arg10, T11 arg11, T12 arg12) => _func(arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12);
+
         /// <summary>
         /// Implicit convert DiagnosticFunc to Func
         /// </summary>
@@ -383,6 +422,9 @@
         {
             _func = func.Diagnostic(category, data);
         }
+
+        /// <summary/>
+        public TResult Invoke(T1 arg1, T2 arg2, T3 arg3, T4 arg4, T5 arg5, T6 arg6, T7 arg7, T8 arg8, T9 arg9, T10 arg10, T11 arg11, T12 arg12, T13 arg13) => _func(arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13);
 
         /// <summary>
         /// Implicit convert DiagnosticFunc to Func
@@ -412,6 +454,9 @@
             _func = func.Diagnostic(category, data);
         }
 
+        /// <summary/>
+        public TResult Invoke(T1 arg1, T2 arg2, T3 arg3, T4 arg4, T5 arg5, T6 arg6, T7 arg7, T8 arg8, T9 arg9, T10 arg10, T11 arg11, T12 arg12, T13 arg13, T14 arg14) => _func(arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14);
+
         /// <summary>
         /// Implicit convert DiagnosticFunc to Func
         /// </summary>
@@ -440,6 +485,9 @@
             _func = func.Diagnostic(category, data);
         }
 
+        /// <summary/>
+        public TResult Invoke(T1 arg1, T2 arg2, T3 arg3, T4 arg4, T5 arg5, T6 arg6, T7 arg7, T8 arg8, T9 arg9, T10 arg10, T11 arg11, T12 arg12, T13 arg13, T14 arg14, T15 arg15) => _func(arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, arg15);
+
         /// <summary>
         /// Implicit convert DiagnosticFunc to Func
         /// </summary>
@@ -467,6 +515,9 @@
         {
             _func = func.Diagnostic(category, data);
         }
+
+        /// <summary/>
+        public TResult Invoke(T1 arg1, T2 arg2, T3 arg3, T4 arg4, T5 arg5, T6 arg6, T7 arg7, T8 arg8, T9 arg9, T10 arg10, T11 arg11, T12 arg12, T13 arg13, T14 arg14, T15 arg15, T16 arg16) => _func(arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, arg15, arg16);
 
         /// <summary>
         /// Implicit convert DiagnosticFunc to Func

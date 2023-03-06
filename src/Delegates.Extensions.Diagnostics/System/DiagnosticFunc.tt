@@ -10,20 +10,32 @@ namespace System
     for (var i = 0; i < 17; i++)
     {
         var genericTypes = string.Empty;
+        var invokeParameters = string.Empty;
+        var invokeArguments = string.Empty;
         if (i == 1)
         {
             genericTypes = "T, ";
+            invokeParameters = "T arg";
+            invokeArguments = "arg";
         }
         else if (i > 1)
         {
             var genericTypesBuilder = new StringBuilder();
+            var invokeParamsBuilder = new StringBuilder();
+            var invokeArgsBuilder = new StringBuilder();
 
             for (var j = 1; j < i + 1; j++)
             {
                 genericTypesBuilder.Append('T').Append(j).Append(", ");
+                invokeParamsBuilder.Append('T').Append(j).Append(" arg").Append(j).Append(", ");
+                invokeArgsBuilder.Append("arg").Append(j).Append(", ");
             }
 
             genericTypes = genericTypesBuilder.ToString();
+            invokeParamsBuilder.Length = invokeParamsBuilder.Length - 2;
+            invokeParameters = invokeParamsBuilder.ToString();
+            invokeArgsBuilder.Length = invokeArgsBuilder.Length - 2;
+            invokeArguments = invokeArgsBuilder.ToString();
         }
     #>
 
@@ -45,6 +57,9 @@ namespace System
         {
             _func = func.Diagnostic(category, data);
         }
+
+        /// <summary/>
+        public TResult Invoke(<#=invokeParameters#>) => _func(<#=invokeArguments#>);
 
         /// <summary>
         /// Implicit convert DiagnosticFunc to Func
