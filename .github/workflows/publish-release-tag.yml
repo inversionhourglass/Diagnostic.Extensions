@@ -1,20 +1,14 @@
-name: Test
+name: Publish Release NuGets on tag
 on:
-  push:
-    branches:
-      - master
-    paths-ignore:
-      - '**.md'
-      - '**.snk'
-      - 'LICENSE'
+  push: [tags]
 jobs:
-  windows:
-    name: Windows
+  publish:
+    name: Build and publish on windows
     runs-on: windows-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-        
+
       - name: Setup .NET
         uses: actions/setup-dotnet@v3.0.3
         with:
@@ -23,13 +17,21 @@ jobs:
             5.0.x
             6.0.x
             7.0.x
-          
+
+      - name: Remove Samples
+        run: dotnet sln Diagnostic.Extensions.sln remove (ls -r samples/**/*.csproj)
+
       - name: Restore NuGets
         run: dotnet restore Diagnostic.Extensions.sln
 
       - name: Build Solution
         run: dotnet build --configuration Release --no-restore Diagnostic.Extensions.sln
-        
+
       - name: Run Tests
         run: dotnet test --configuration Release --no-build Diagnostic.Extensions.sln
-        
+
+      - name: Pack NuGets
+        run: dotnet pack Diagnostic.Extensions.sln --no-build
+
+      - name: Publish
+        run: dotnet nuget push nugets/*.nupkg -k ${{ secrets.API_KEY }} -s https://api.nuget.org/v3/index.json
