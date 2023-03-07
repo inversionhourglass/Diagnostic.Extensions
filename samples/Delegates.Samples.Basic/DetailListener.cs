@@ -1,4 +1,5 @@
-﻿using Delegates.Extensions.Diagnostics.Contexts;
+﻿using Delegates.Extensions.Diagnostics;
+using Delegates.Extensions.Diagnostics.Contexts;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -31,6 +32,25 @@ namespace Delegates.Samples.Basic
                 case "Delegates.Extensions.PreventAsyncLocal.Executing":
                     OnPreventAsyncLocalExecuting((ExecutingContext)value.Value);
                     break;
+
+                case Diagnostician.Names.DEFAULT_PREPARING:
+                    OnDefaultPreparing((PreparingContext)value.Value);
+                    break;
+                case Diagnostician.Names.DEFAULT_PREPARED:
+                    OnDefaultPrepared((PreparedContext)value.Value);
+                    break;
+                case Diagnostician.Names.DEFAULT_EXECUTING:
+                    OnDefaultExecuting((ExecutingContext)value.Value);
+                    break;
+                case Diagnostician.Names.DEFAULT_SUCCEED:
+                    OnDefaultSucceed((SucceedContext)value.Value);
+                    break;
+                case Diagnostician.Names.DEFAULT_EXCEPTIONAL:
+                    OnDefaultExceptional((ExceptionalContext)value.Value);
+                    break;
+                case Diagnostician.Names.DEFAULT_FINISHED:
+                    OnDefaultFinished((FinishedContext)value.Value);
+                    break;
             }
         }
 
@@ -49,6 +69,36 @@ namespace Delegates.Samples.Basic
         private void OnPreventAsyncLocalExecuting(ExecutingContext context)
         {
             Data.Value = null;
+        }
+
+        private void OnDefaultPreparing(PreparingContext context)
+        {
+            Console.WriteLine("default on preparing");
+        }
+
+        private void OnDefaultPrepared(PreparedContext context)
+        {
+            Console.WriteLine("default on prepared");
+        }
+
+        private void OnDefaultExecuting(ExecutingContext context)
+        {
+            Console.WriteLine("default on executing");
+        }
+
+        private void OnDefaultSucceed(SucceedContext context)
+        {
+            Console.WriteLine("default on succeed");
+        }
+
+        private void OnDefaultExceptional(ExceptionalContext context)
+        {
+            Console.WriteLine("default on exceptional");
+        }
+
+        private void OnDefaultFinished(FinishedContext context)
+        {
+            Console.WriteLine("default on finished");
         }
     }
 }

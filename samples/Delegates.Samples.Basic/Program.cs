@@ -8,13 +8,19 @@ namespace Delegates.Samples.Basic
 {
     internal class Program
     {
-        static void Main(string[] args)
+        static async Task Main(string[] args)
         {
             DiagnosticListener.AllListeners.Subscribe(new DelegatesListener());
 
+            var t = new DiagnosticFunc<Task>(async () => await Log(3000)).Invoke();
+
             AsyncLocal();
 
+            await new DiagnosticFunc<Task>(async () => await Log(500));
+
             TaskEnqueueTiming();
+
+            t.Wait();
         }
 
         static void TaskEnqueueTiming()
@@ -45,7 +51,7 @@ namespace Delegates.Samples.Basic
 
             Task.Run(Print);
 
-            Task.Run(((Action)Print).Diagnostic("PreventAsyncLocal"));
+            Task.Run(new DiagnosticAction("PreventAsyncLocal", Print));
 
             Task.Run(Print);
 
@@ -53,6 +59,13 @@ namespace Delegates.Samples.Basic
             {
                 Console.WriteLine($"async local value: {DetailListener.Data.Value}");
             }
+        }
+
+        static async Task Log(int delay)
+        {
+            Console.WriteLine($"{nameof(Log)} - {delay} - 1");
+            await Task.Delay(delay);
+            Console.WriteLine($"{nameof(Log)} - {delay} - 2");
         }
     }
 }
