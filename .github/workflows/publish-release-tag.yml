@@ -1,6 +1,8 @@
 name: Publish Release NuGets on tag
 on:
-  push: [tags]
+  push:
+    tags:
+      - '*'
 jobs:
   publish:
     name: Build and publish on windows
