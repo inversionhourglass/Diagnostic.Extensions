@@ -29,23 +29,23 @@ namespace System
                 {
                     var result = func();
                     var succeedContext = new SucceedContext(data, cabinet);
-                    Write(category, Ids.SUCCEED, data);
+                    Write(category, Ids.SUCCEED, succeedContext);
                     return result;
                 }
                 catch (Exception ex)
                 {
                     var exceptionalContext = new ExceptionalContext(ex, data, cabinet);
-                    Write(category, Ids.EXCEPTIONAL, data);
+                    Write(category, Ids.EXCEPTIONAL, exceptionalContext);
                     throw;
                 }
                 finally
                 {
                     var finishedContext = new FinishedContext(data, cabinet);
-                    Write(category, Ids.FINISHED, data);
+                    Write(category, Ids.FINISHED, finishedContext);
                 }
             };
             var preparedContext = new PreparedContext(data, cabinet);
-            Write(category, Ids.PREPARED, data);
+            Write(category, Ids.PREPARED, preparedContext);
 
             return wrapped;
         }
@@ -68,23 +68,23 @@ namespace System
                 {
                     var result = func(arg);
                     var succeedContext = new SucceedContext(data, cabinet);
-                    Write(category, Ids.SUCCEED, data);
+                    Write(category, Ids.SUCCEED, succeedContext);
                     return result;
                 }
                 catch (Exception ex)
                 {
                     var exceptionalContext = new ExceptionalContext(ex, data, cabinet);
-                    Write(category, Ids.EXCEPTIONAL, data);
+                    Write(category, Ids.EXCEPTIONAL, exceptionalContext);
                     throw;
                 }
                 finally
                 {
                     var finishedContext = new FinishedContext(data, cabinet);
-                    Write(category, Ids.FINISHED, data);
+                    Write(category, Ids.FINISHED, finishedContext);
                 }
             };
             var preparedContext = new PreparedContext(data, cabinet);
-            Write(category, Ids.PREPARED, data);
+            Write(category, Ids.PREPARED, preparedContext);
 
             return wrapped;
         }
@@ -107,23 +107,23 @@ namespace System
                 {
                     var result = func(arg1, arg2);
                     var succeedContext = new SucceedContext(data, cabinet);
-                    Write(category, Ids.SUCCEED, data);
+                    Write(category, Ids.SUCCEED, succeedContext);
                     return result;
                 }
                 catch (Exception ex)
                 {
                     var exceptionalContext = new ExceptionalContext(ex, data, cabinet);
-                    Write(category, Ids.EXCEPTIONAL, data);
+                    Write(category, Ids.EXCEPTIONAL, exceptionalContext);
                     throw;
                 }
                 finally
                 {
                     var finishedContext = new FinishedContext(data, cabinet);
-                    Write(category, Ids.FINISHED, data);
+                    Write(category, Ids.FINISHED, finishedContext);
                 }
             };
             var preparedContext = new PreparedContext(data, cabinet);
-            Write(category, Ids.PREPARED, data);
+            Write(category, Ids.PREPARED, preparedContext);
 
             return wrapped;
         }
@@ -146,23 +146,23 @@ namespace System
                 {
                     var result = func(arg1, arg2, arg3);
                     var succeedContext = new SucceedContext(data, cabinet);
-                    Write(category, Ids.SUCCEED, data);
+                    Write(category, Ids.SUCCEED, succeedContext);
                     return result;
                 }
                 catch (Exception ex)
                 {
                     var exceptionalContext = new ExceptionalContext(ex, data, cabinet);
-                    Write(category, Ids.EXCEPTIONAL, data);
+                    Write(category, Ids.EXCEPTIONAL, exceptionalContext);
                     throw;
                 }
                 finally
                 {
                     var finishedContext = new FinishedContext(data, cabinet);
-                    Write(category, Ids.FINISHED, data);
+                    Write(category, Ids.FINISHED, finishedContext);
                 }
             };
             var preparedContext = new PreparedContext(data, cabinet);
-            Write(category, Ids.PREPARED, data);
+            Write(category, Ids.PREPARED, preparedContext);
 
             return wrapped;
         }
@@ -185,23 +185,23 @@ namespace System
                 {
                     var result = func(arg1, arg2, arg3, arg4);
                     var succeedContext = new SucceedContext(data, cabinet);
-                    Write(category, Ids.SUCCEED, data);
+                    Write(category, Ids.SUCCEED, succeedContext);
                     return result;
                 }
                 catch (Exception ex)
                 {
                     var exceptionalContext = new ExceptionalContext(ex, data, cabinet);
-                    Write(category, Ids.EXCEPTIONAL, data);
+                    Write(category, Ids.EXCEPTIONAL, exceptionalContext);
                     throw;
                 }
                 finally
                 {
                     var finishedContext = new FinishedContext(data, cabinet);
-                    Write(category, Ids.FINISHED, data);
+                    Write(category, Ids.FINISHED, finishedContext);
                 }
             };
             var preparedContext = new PreparedContext(data, cabinet);
-            Write(category, Ids.PREPARED, data);
+            Write(category, Ids.PREPARED, preparedContext);
 
             return wrapped;
         }
@@ -224,23 +224,23 @@ namespace System
                 {
                     var result = func(arg1, arg2, arg3, arg4, arg5);
                     var succeedContext = new SucceedContext(data, cabinet);
-                    Write(category, Ids.SUCCEED, data);
+                    Write(category, Ids.SUCCEED, succeedContext);
                     return result;
                 }
                 catch (Exception ex)
                 {
                     var exceptionalContext = new ExceptionalContext(ex, data, cabinet);
-                    Write(category, Ids.EXCEPTIONAL, data);
+                    Write(category, Ids.EXCEPTIONAL, exceptionalContext);
                     throw;
                 }
                 finally
                 {
                     var finishedContext = new FinishedContext(data, cabinet);
-                    Write(category, Ids.FINISHED, data);
+                    Write(category, Ids.FINISHED, finishedContext);
                 }
             };
             var preparedContext = new PreparedContext(data, cabinet);
-            Write(category, Ids.PREPARED, data);
+            Write(category, Ids.PREPARED, preparedContext);
 
             return wrapped;
         }
@@ -263,23 +263,23 @@ namespace System
                 {
                     var result = func(arg1, arg2, arg3, arg4, arg5, arg6);
                     var succeedContext = new SucceedContext(data, cabinet);
-                    Write(category, Ids.SUCCEED, data);
+                    Write(category, Ids.SUCCEED, succeedContext);
                     return result;
                 }
                 catch (Exception ex)
                 {
                     var exceptionalContext = new ExceptionalContext(ex, data, cabinet);
-                    Write(category, Ids.EXCEPTIONAL, data);
+                    Write(category, Ids.EXCEPTIONAL, exceptionalContext);
                     throw;
                 }
                 finally
                 {
                     var finishedContext = new FinishedContext(data, cabinet);
-                    Write(category, Ids.FINISHED, data);
+                    Write(category, Ids.FINISHED, finishedContext);
                 }
             };
             var preparedContext = new PreparedContext(data, cabinet);
-            Write(category, Ids.PREPARED, data);
+            Write(category, Ids.PREPARED, preparedContext);
 
             return wrapped;
         }
@@ -302,23 +302,23 @@ namespace System
                 {
                     var result = func(arg1, arg2, arg3, arg4, arg5, arg6, arg7);
                     var succeedContext = new SucceedContext(data, cabinet);
-                    Write(category, Ids.SUCCEED, data);
+                    Write(category, Ids.SUCCEED, succeedContext);
                     return result;
                 }
                 catch (Exception ex)
                 {
                     var exceptionalContext = new ExceptionalContext(ex, data, cabinet);
-                    Write(category, Ids.EXCEPTIONAL, data);
+                    Write(category, Ids.EXCEPTIONAL, exceptionalContext);
                     throw;
                 }
                 finally
                 {
                     var finishedContext = new FinishedContext(data, cabinet);
-                    Write(category, Ids.FINISHED, data);
+                    Write(category, Ids.FINISHED, finishedContext);
                 }
             };
             var preparedContext = new PreparedContext(data, cabinet);
-            Write(category, Ids.PREPARED, data);
+            Write(category, Ids.PREPARED, preparedContext);
 
             return wrapped;
         }
@@ -341,23 +341,23 @@ namespace System
                 {
                     var result = func(arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
                     var succeedContext = new SucceedContext(data, cabinet);
-                    Write(category, Ids.SUCCEED, data);
+                    Write(category, Ids.SUCCEED, succeedContext);
                     return result;
                 }
                 catch (Exception ex)
                 {
                     var exceptionalContext = new ExceptionalContext(ex, data, cabinet);
-                    Write(category, Ids.EXCEPTIONAL, data);
+                    Write(category, Ids.EXCEPTIONAL, exceptionalContext);
                     throw;
                 }
                 finally
                 {
                     var finishedContext = new FinishedContext(data, cabinet);
-                    Write(category, Ids.FINISHED, data);
+                    Write(category, Ids.FINISHED, finishedContext);
                 }
             };
             var preparedContext = new PreparedContext(data, cabinet);
-            Write(category, Ids.PREPARED, data);
+            Write(category, Ids.PREPARED, preparedContext);
 
             return wrapped;
         }
@@ -380,23 +380,23 @@ namespace System
                 {
                     var result = func(arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9);
                     var succeedContext = new SucceedContext(data, cabinet);
-                    Write(category, Ids.SUCCEED, data);
+                    Write(category, Ids.SUCCEED, succeedContext);
                     return result;
                 }
                 catch (Exception ex)
                 {
                     var exceptionalContext = new ExceptionalContext(ex, data, cabinet);
-                    Write(category, Ids.EXCEPTIONAL, data);
+                    Write(category, Ids.EXCEPTIONAL, exceptionalContext);
                     throw;
                 }
                 finally
                 {
                     var finishedContext = new FinishedContext(data, cabinet);
-                    Write(category, Ids.FINISHED, data);
+                    Write(category, Ids.FINISHED, finishedContext);
                 }
             };
             var preparedContext = new PreparedContext(data, cabinet);
-            Write(category, Ids.PREPARED, data);
+            Write(category, Ids.PREPARED, preparedContext);
 
             return wrapped;
         }
@@ -419,23 +419,23 @@ namespace System
                 {
                     var result = func(arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10);
                     var succeedContext = new SucceedContext(data, cabinet);
-                    Write(category, Ids.SUCCEED, data);
+                    Write(category, Ids.SUCCEED, succeedContext);
                     return result;
                 }
                 catch (Exception ex)
                 {
                     var exceptionalContext = new ExceptionalContext(ex, data, cabinet);
-                    Write(category, Ids.EXCEPTIONAL, data);
+                    Write(category, Ids.EXCEPTIONAL, exceptionalContext);
                     throw;
                 }
                 finally
                 {
                     var finishedContext = new FinishedContext(data, cabinet);
-                    Write(category, Ids.FINISHED, data);
+                    Write(category, Ids.FINISHED, finishedContext);
                 }
             };
             var preparedContext = new PreparedContext(data, cabinet);
-            Write(category, Ids.PREPARED, data);
+            Write(category, Ids.PREPARED, preparedContext);
 
             return wrapped;
         }
@@ -458,23 +458,23 @@ namespace System
                 {
                     var result = func(arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11);
                     var succeedContext = new SucceedContext(data, cabinet);
-                    Write(category, Ids.SUCCEED, data);
+                    Write(category, Ids.SUCCEED, succeedContext);
                     return result;
                 }
                 catch (Exception ex)
                 {
                     var exceptionalContext = new ExceptionalContext(ex, data, cabinet);
-                    Write(category, Ids.EXCEPTIONAL, data);
+                    Write(category, Ids.EXCEPTIONAL, exceptionalContext);
                     throw;
                 }
                 finally
                 {
                     var finishedContext = new FinishedContext(data, cabinet);
-                    Write(category, Ids.FINISHED, data);
+                    Write(category, Ids.FINISHED, finishedContext);
                 }
             };
             var preparedContext = new PreparedContext(data, cabinet);
-            Write(category, Ids.PREPARED, data);
+            Write(category, Ids.PREPARED, preparedContext);
 
             return wrapped;
         }
@@ -497,23 +497,23 @@ namespace System
                 {
                     var result = func(arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12);
                     var succeedContext = new SucceedContext(data, cabinet);
-                    Write(category, Ids.SUCCEED, data);
+                    Write(category, Ids.SUCCEED, succeedContext);
                     return result;
                 }
                 catch (Exception ex)
                 {
                     var exceptionalContext = new ExceptionalContext(ex, data, cabinet);
-                    Write(category, Ids.EXCEPTIONAL, data);
+                    Write(category, Ids.EXCEPTIONAL, exceptionalContext);
                     throw;
                 }
                 finally
                 {
                     var finishedContext = new FinishedContext(data, cabinet);
-                    Write(category, Ids.FINISHED, data);
+                    Write(category, Ids.FINISHED, finishedContext);
                 }
             };
             var preparedContext = new PreparedContext(data, cabinet);
-            Write(category, Ids.PREPARED, data);
+            Write(category, Ids.PREPARED, preparedContext);
 
             return wrapped;
         }
@@ -536,23 +536,23 @@ namespace System
                 {
                     var result = func(arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13);
                     var succeedContext = new SucceedContext(data, cabinet);
-                    Write(category, Ids.SUCCEED, data);
+                    Write(category, Ids.SUCCEED, succeedContext);
                     return result;
                 }
                 catch (Exception ex)
                 {
                     var exceptionalContext = new ExceptionalContext(ex, data, cabinet);
-                    Write(category, Ids.EXCEPTIONAL, data);
+                    Write(category, Ids.EXCEPTIONAL, exceptionalContext);
                     throw;
                 }
                 finally
                 {
                     var finishedContext = new FinishedContext(data, cabinet);
-                    Write(category, Ids.FINISHED, data);
+                    Write(category, Ids.FINISHED, finishedContext);
                 }
             };
             var preparedContext = new PreparedContext(data, cabinet);
-            Write(category, Ids.PREPARED, data);
+            Write(category, Ids.PREPARED, preparedContext);
 
             return wrapped;
         }
@@ -575,23 +575,23 @@ namespace System
                 {
                     var result = func(arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14);
                     var succeedContext = new SucceedContext(data, cabinet);
-                    Write(category, Ids.SUCCEED, data);
+                    Write(category, Ids.SUCCEED, succeedContext);
                     return result;
                 }
                 catch (Exception ex)
                 {
                     var exceptionalContext = new ExceptionalContext(ex, data, cabinet);
-                    Write(category, Ids.EXCEPTIONAL, data);
+                    Write(category, Ids.EXCEPTIONAL, exceptionalContext);
                     throw;
                 }
                 finally
                 {
                     var finishedContext = new FinishedContext(data, cabinet);
-                    Write(category, Ids.FINISHED, data);
+                    Write(category, Ids.FINISHED, finishedContext);
                 }
             };
             var preparedContext = new PreparedContext(data, cabinet);
-            Write(category, Ids.PREPARED, data);
+            Write(category, Ids.PREPARED, preparedContext);
 
             return wrapped;
         }
@@ -614,23 +614,23 @@ namespace System
                 {
                     var result = func(arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, arg15);
                     var succeedContext = new SucceedContext(data, cabinet);
-                    Write(category, Ids.SUCCEED, data);
+                    Write(category, Ids.SUCCEED, succeedContext);
                     return result;
                 }
                 catch (Exception ex)
                 {
                     var exceptionalContext = new ExceptionalContext(ex, data, cabinet);
-                    Write(category, Ids.EXCEPTIONAL, data);
+                    Write(category, Ids.EXCEPTIONAL, exceptionalContext);
                     throw;
                 }
                 finally
                 {
                     var finishedContext = new FinishedContext(data, cabinet);
-                    Write(category, Ids.FINISHED, data);
+                    Write(category, Ids.FINISHED, finishedContext);
                 }
             };
             var preparedContext = new PreparedContext(data, cabinet);
-            Write(category, Ids.PREPARED, data);
+            Write(category, Ids.PREPARED, preparedContext);
 
             return wrapped;
         }
@@ -653,23 +653,23 @@ namespace System
                 {
                     var result = func(arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, arg15, arg16);
                     var succeedContext = new SucceedContext(data, cabinet);
-                    Write(category, Ids.SUCCEED, data);
+                    Write(category, Ids.SUCCEED, succeedContext);
                     return result;
                 }
                 catch (Exception ex)
                 {
                     var exceptionalContext = new ExceptionalContext(ex, data, cabinet);
-                    Write(category, Ids.EXCEPTIONAL, data);
+                    Write(category, Ids.EXCEPTIONAL, exceptionalContext);
                     throw;
                 }
                 finally
                 {
                     var finishedContext = new FinishedContext(data, cabinet);
-                    Write(category, Ids.FINISHED, data);
+                    Write(category, Ids.FINISHED, finishedContext);
                 }
             };
             var preparedContext = new PreparedContext(data, cabinet);
-            Write(category, Ids.PREPARED, data);
+            Write(category, Ids.PREPARED, preparedContext);
 
             return wrapped;
         }

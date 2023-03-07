@@ -14,7 +14,7 @@ namespace Delegates.Extensions.Diagnostics
         /// <summary>
         /// Default category name if category is absent
         /// </summary>
-        public const string DEFAULT_CATEGORY = LISTENER_NAME + ".Default";
+        public const string DEFAULT_CATEGORY = "Default";
 
         private static readonly DiagnosticListener _Listener = new DiagnosticListener(LISTENER_NAME);
 
@@ -89,6 +89,42 @@ namespace Delegates.Extensions.Diagnostics
             /// finished
             /// </summary>
             public const string FINISHED = "Finished";
+        }
+
+        /// <summary>
+        /// buildin names
+        /// </summary>
+        public static class Names
+        {
+            /// <summary>
+            /// default preparing
+            /// </summary>
+            public const string DEFAULT_PREPARING = $"{LISTENER_NAME}.{DEFAULT_CATEGORY}.{Ids.PREPARING}";
+
+            /// <summary>
+            /// default prepared
+            /// </summary>
+            public const string DEFAULT_PREPARED = $"{LISTENER_NAME}.{DEFAULT_CATEGORY}.{Ids.PREPARED}";
+
+            /// <summary>
+            /// default executing
+            /// </summary>
+            public const string DEFAULT_EXECUTING = $"{LISTENER_NAME}.{DEFAULT_CATEGORY}.{Ids.EXECUTING}";
+
+            /// <summary>
+            /// default succeed
+            /// </summary>
+            public const string DEFAULT_SUCCEED = $"{LISTENER_NAME}.{DEFAULT_CATEGORY}.{Ids.SUCCEED}";
+
+            /// <summary>
+            /// default exceptional
+            /// </summary>
+            public const string DEFAULT_EXCEPTIONAL = $"{LISTENER_NAME}.{DEFAULT_CATEGORY}.{Ids.EXCEPTIONAL}";
+
+            /// <summary>
+            /// default finished
+            /// </summary>
+            public const string DEFAULT_FINISHED = $"{LISTENER_NAME}.{DEFAULT_CATEGORY}.{Ids.FINISHED}";
         }
     }
 }

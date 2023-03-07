@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+﻿using System.Linq;
+using System.Threading.Tasks;
 
 namespace System
 {
@@ -7,7 +8,7 @@ namespace System
         private static dynamic? TryTaskDiagnostic(dynamic func, string? category = null, object? data = null)
         {
             var funcType = func.GetType();
-            var taskType = funcType.GetGenericArguments().Last();
+            var taskType = ((Type[])funcType.GetGenericArguments()).Last();
 
             if (typeof(Task) == taskType || typeof(ValueTask) == taskType)
             {

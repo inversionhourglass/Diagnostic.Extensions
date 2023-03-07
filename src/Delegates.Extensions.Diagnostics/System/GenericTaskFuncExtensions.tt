@@ -62,23 +62,23 @@ namespace System
                 {
                     var result = await func(<#=args#>);
                     var succeedContext = new SucceedContext(data, cabinet);
-                    Write(category, Ids.SUCCEED, data);
+                    Write(category, Ids.SUCCEED, succeedContext);
                     return result;
                 }
                 catch (Exception ex)
                 {
                     var exceptionalContext = new ExceptionalContext(ex, data, cabinet);
-                    Write(category, Ids.EXCEPTIONAL, data);
+                    Write(category, Ids.EXCEPTIONAL, exceptionalContext);
                     throw;
                 }
                 finally
                 {
                     var finishedContext = new FinishedContext(data, cabinet);
-                    Write(category, Ids.FINISHED, data);
+                    Write(category, Ids.FINISHED, finishedContext);
                 }
             };
             var preparedContext = new PreparedContext(data, cabinet);
-            Write(category, Ids.PREPARED, data);
+            Write(category, Ids.PREPARED, preparedContext);
 
             return wrapped;
         }

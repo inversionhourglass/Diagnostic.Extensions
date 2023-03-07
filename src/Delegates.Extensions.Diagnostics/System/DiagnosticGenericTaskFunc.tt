@@ -46,7 +46,7 @@ namespace System
     /// Func diagnostic message
     /// </summary>
     [EditorBrowsable(EditorBrowsableState.Never)]
-    [Obsolete("Infact we don't need DiagnosticGenericTaskFunc, DiagnosticFunc is enough")]
+    [Obsolete("Infact users don't need DiagnosticGenericTaskFunc, DiagnosticFunc is enough")]
     public struct DiagnosticGenericTaskFunc<<#=genericTypes#>TResult>
     {
         private readonly Func<<#=genericTypes#>Task<TResult>> _func;
