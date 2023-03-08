@@ -57,3 +57,26 @@ internal class Listener : IObserver<KeyValuePair<string, object>>
     }
 }
 ```
+
+Wrap `Func<Task>` or `Func<Task<T>>`
+```csharp
+// define a async Method
+public async Task<int> CallAsync(int delay)
+{
+    await Task.Delay(delay);
+    await new HttpClient().GetAsync("https://github.com");
+    return delay;
+}
+
+// await directly
+await CallAsync(100);
+
+// without await
+CallAsync(100);
+
+// await with wrap
+await new DiagnosticFunc<Task<int>>("my-category", () => CallAsync(100));
+
+// without await but wrap
+new DiagnosticFunc<Task<int>>("my-category", () => CallAsync(100)).Invoke();
+```

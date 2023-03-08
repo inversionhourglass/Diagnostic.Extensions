@@ -11,11 +11,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_SolutionItems", "_Solution
 	ProjectSection(SolutionItems) = preProject
 		common.props = common.props
 		README.md = README.md
+		Release.md = Release.md
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "samples", "samples", "{3EA76D72-DC10-4AF8-9C4C-6581654DF884}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Delegates.Samples.Basic", "samples\Delegates.Samples.Basic\Delegates.Samples.Basic.csproj", "{B08040A3-7377-4BC7-B5DC-C151CD4C16ED}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Delegates.Samples.Basic", "samples\Delegates.Samples.Basic\Delegates.Samples.Basic.csproj", "{B08040A3-7377-4BC7-B5DC-C151CD4C16ED}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
