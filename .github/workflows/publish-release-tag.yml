@@ -35,7 +35,7 @@ jobs:
         run: dotnet test --configuration Release --no-build Diagnostic.Extensions.sln
 
       - name: Pack NuGets
-        run: dotnet pack Diagnostic.Extensions.sln --no-build
+        run: dotnet pack Diagnostic.Extensions.sln --no-build --configuration Release
 
       - name: Publish
         run: dotnet nuget push nugets/**.nupkg -k ${{ secrets.API_KEY }} -s https://api.nuget.org/v3/index.json
